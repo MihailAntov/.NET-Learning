@@ -1,0 +1,25 @@
+@using Packt.Shared
+@model Customer
+
+
+<h2>Add a new customer</h2>
+<form asp-action="Customers" method="POST">
+    @Html.Label("Customer ID")
+    <br>
+    @Html.TextBoxFor(Model => Model.CustomerId)
+<br>
+    @Html.Label("Company Name")
+<br>
+    @Html.TextBoxFor(Model => Model.CompanyName)
+<br>
+    @Html.Label("Contact Name")
+<br>
+    @Html.TextBoxFor(Model => Model.ContactName)
+<br>
+    @Html.Label("Contact Title")
+<br>
+    @Html.TextBoxFor(Model => Model.ContactTitle)
+<br>
+    <input type="submit" value="Add customer"/>
+    </div>
+</form>

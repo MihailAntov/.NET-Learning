@@ -1,0 +1,36 @@
+
+@page
+@functions
+{
+  public string DayName {get; set;}
+  public void OnGet()
+  {
+    ViewData["Title"] = "Northwind B2B";
+    System.Globalization.CultureInfo eng = new System.Globalization.CultureInfo(0x0009);
+    Model.DayName = DateTime.Now.ToString("dddd, dd MMM", eng);
+  }
+}
+
+<!doctype html>
+<html lang="en">
+    <div class="container">
+        <div class="jumbotron">
+        <h1 class="display-3">Welcome to Northwind!</h1>
+        <p class="lead">We offer products to our customers.</p>
+        <hr />
+        <p>It's @Model.DayName. Our customers include hotels, restaurants and cruise ships.</p>
+        <p>
+        <a class="btn btn-primary" href="suppliers">Find out more about our suppleirs</a>
+        </p>
+        <p>
+          <a class="btn btn-primary" href="packtfeatures/employees">Contact our employees</a>
+        </p>
+        <p>
+          <a class="btn btn-primary" href="customers">Browse our customers</a>
+        </p>
+        <p>
+          <a class="btn btn-primary" href="tools">Browse our tools</a>
+        </p>
+        </div>
+        </div>
+</html>

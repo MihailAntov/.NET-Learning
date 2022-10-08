@@ -1,0 +1,30 @@
+﻿// See https://aka.ms/new-console-template for more information
+using static System.Console;
+int a = 3;
+int b = a++;
+WriteLine($"a is {a}, b is {b}.");
+int c = 3;
+int d = ++a;
+WriteLine($"c is {c}, d is {d}.");
+int e = 11;
+int f = 3;
+WriteLine($"e is {e}, f is {f}.");
+WriteLine($"{e} + {f} is {e + f}.");
+WriteLine($"{e} - {f} is {e - f}.");
+WriteLine($"{e} * {f} is {e * f}.");
+WriteLine($"{e} / {f} is {e / f}.");
+WriteLine($"{e} % {f} is {e % f}.");
+double g = 11.0;
+WriteLine($"{g} / {f} is {g / f}");
+WriteLine($"{g} % {f} is {g % f}");
+int p = 6;
+WriteLine(p);
+p+= 3;
+WriteLine(p);
+p-= 3;
+WriteLine(p);
+p*=2;
+WriteLine(p);
+p/=3;
+WriteLine(p);
+

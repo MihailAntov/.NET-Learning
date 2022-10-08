@@ -1,0 +1,12 @@
+﻿using System.Diagnostics;
+using static System.Console;
+using System.Linq;
+using System.Collections.Generic;
+var watch = Stopwatch.StartNew();
+Write("Press enter to start: ");
+ReadLine();
+watch.Start();
+IEnumerable<int> numbers = Enumerable.Range(1, 200_000_000);
+var squares = numbers.AsParallel().Select(number => number * number).ToArray();
+watch.Stop();
+WriteLine($"{watch.ElapsedMilliseconds} elapsed milliseconds.");

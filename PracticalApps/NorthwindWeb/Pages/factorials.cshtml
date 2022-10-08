@@ -1,0 +1,25 @@
+@page
+@using Packt.Shared
+@model NorthwindWeb.Pages.FactorialsModel
+@{
+    ViewData["Title"] = $"Northwind B2B - Factorials";
+}
+<h4>Factorial Calculator</h4>
+<hr/>
+<form action="/factorials" method="get">
+  <label for="number">Enter a number:</label>
+  <input type="number" id="number" name="number" required max="20"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+@if(Request.QueryString.ToString().Contains("number"))
+{
+    Model.Number = Convert.ToInt64(Request.QueryString.ToString().Substring(8));
+    <p>@Request.QueryString.ToString().Substring(8)! = @Model.Factorial(Model.Number)</p>
+}
+
+<p>&nbsp;</p>
+<p>
+<a class="btn btn-primary" href="tools">Go Back</a>
+</p>

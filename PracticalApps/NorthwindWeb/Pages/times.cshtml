@@ -1,0 +1,36 @@
+@page
+@using Packt.Shared
+@model NorthwindWeb.Pages.TimesModel
+@{
+    ViewData["Title"] = $"Northwind B2B - Times";
+}
+<h4>Please select a number:</h4>
+<p>
+@for (int i = 1; i < 10; i++)
+{
+    <a class="btn btn-primary btn-lg"; href="?@i">&nbsp @i</a>
+}
+<a class="btn btn-primary btn-lg"; href="?10">10</a>
+</p>
+<p>
+   @for (int i = 11; i < 21; i++)
+{
+    <a class="btn btn-primary btn-lg" href="?@i">@i</a>
+} 
+</p>
+<hr />
+@if(Request.QueryString.ToString().Length > 0)
+{
+    Model.tableNumber = Convert.ToInt32(Request.QueryString.ToString().Substring(1));
+
+<p>This is the @Model.tableNumber times table.</p>
+<p>&nbsp;</p>
+@for (int i = 0; i < 21; i++)
+{
+    <p>@i x @Model.tableNumber = @(i*@Model.tableNumber)</p>
+}
+}
+<p>&nbsp;</p>
+<p>
+<a class="btn btn-primary" href="tools">Go Back</a>
+</p>

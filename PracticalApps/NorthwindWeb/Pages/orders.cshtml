@@ -1,0 +1,49 @@
+@page
+@using Packt.Shared
+@model NorthwindWeb.Pages.OrderModel
+@inject NorthwindContext db 
+@{
+    string title = "Orders";
+    ViewData["Title"] = $"Northwind B2B - {title}";
+}
+<table class="table">
+    <thead class="thead-inverse">
+            <tr>
+                <th>Company Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+    <tr>
+    <td>@Model.QueriedCustomer.CompanyName</td>
+    <td>@Model.Phone</td>
+    <td>@Model.Address</td>
+    </tr>
+    </div>
+
+<div class="row">
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Orders is not null)
+            {
+                @foreach (Order o in Model.Orders)
+                {
+                    <tr>
+                        <td>@o.OrderId</td>
+                        <td><datetime format="DDMMYYYY">@o.OrderDate.ToString().Substring(0, o.OrderDate.ToString().Length-7)</datetime></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<p>&nbsp;</p>
+<p>
+<a class="btn btn-primary" href="customers">Go Back</a>
+</p>

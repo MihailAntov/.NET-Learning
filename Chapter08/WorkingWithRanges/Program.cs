@@ -1,0 +1,11 @@
+﻿using static System.Console;
+string name = "Samantha Jones";
+int lengthOfFirst = name.IndexOf(" ");
+int lengthOfLast = name.Length - lengthOfFirst - 1;
+string firstName = name.Substring(startIndex: 0, length:lengthOfFirst);
+string lastName = name.Substring(startIndex: lengthOfFirst + 1, length:lengthOfLast);
+WriteLine($"First name: {firstName}, Last Name: {lastName}");
+ReadOnlySpan<char> nameAsSpan = name.AsSpan();
+var firstNameSpan = nameAsSpan[..lengthOfFirst];
+var lastNameSpan = nameAsSpan[^lengthOfLast..];
+WriteLine($"First name: {firstNameSpan.ToString()}, Last name: {lastNameSpan.ToString()}");

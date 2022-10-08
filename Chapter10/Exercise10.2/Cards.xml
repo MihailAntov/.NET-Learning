@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<customers>
+ <customer>
+ <name>Bob Smith</name>
+ <creditcard>1234-5678-9012-3456</creditcard>
+ <password>Pa$$w0rd</password>
+ </customer>
+<customer>
+ <name>John Smith</name>
+ <creditcard>9078-5634-1290-7856</creditcard>
+ <password>parolata</password>
+ </customer>
+ <customer>
+ <name>Vilitu</name>
+ <creditcard>2296-2250-1230-2554</creditcard>
+ <password>mishko</password>
+ </customer>
+ <customer>
+ <name>Misho</name>
+ <creditcard>1111-2222-3333-4444</creditcard>
+ <password>parolata</password>
+ </customer>
+</customers>
